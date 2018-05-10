@@ -133,6 +133,9 @@
         var date = new Date();
         // var novinkyUrl = "https://www.novinky.cz/archiv?id=966&date=" + date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
         var novinkyUrl = "https://m.novinky.cz/articles?sId=966"; // &date=" + date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
+        // Change this value according to the final deployment URL
+        // var imgUrlReplacePrefix = "file://";
+        var imgUrlReplacePrefix = "https://karlitos.github.io";
 
         // Create the basic page-structure
         var listContainer = document.createElement("div");
@@ -187,10 +190,10 @@
                     if (header) {
                         articleContainer.appendChild(header);
                     }
-                    // Add galler image
+                    // Add gallery image
                     img = doc.querySelector("div.perexBlock > div.image > img");
                     if (img) {
-                        img.src = img.src.replace("file://","https://m.novinky.cz");
+                        img.src = img.src.replace(imgUrlReplacePrefix,"https://m.novinky.cz");
                         articleContainer.appendChild(img);
                     }
                     // Add preface
@@ -283,7 +286,7 @@
                             }
 
                             // Add onclick/ontouch handler with current url as argument
-                            var url = heading.querySelector("a").href.replace("file://","https://m.novinky.cz");
+                            var url = heading.querySelector("a").href.replace(imgUrlReplacePrefix,"https://m.novinky.cz");
 
                             listElement.onclick = function () {
                                 onListItemClick(url)
@@ -296,7 +299,7 @@
                             img = articles[ii].querySelector("img");
                             if (img) {
                                 img.className = "list-image";
-                                img.src = img.src.replace("file://","https://m.novinky.cz");
+                                img.src = img.src.replace(imgUrlReplacePrefix, "https://m.novinky.cz");
                                 listElement.appendChild(img)
                                 img = null;
                             }
