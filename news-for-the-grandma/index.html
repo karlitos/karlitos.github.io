@@ -131,11 +131,11 @@
         var corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
         var parser = new DOMParser();
         var date = new Date();
-        // var novinkyUrl = "https://www.novinky.cz/archiv?id=966&date=" + date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
-        var novinkyUrl = "https://m.novinky.cz/articles?sId=966"; // &date=" + date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
+        var novinkyUrl = "https://www.novinky.cz/archiv?id=966&date=" + date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
+        // var novinkyUrl = "https://m.novinky.cz/articles?sId=966"; // &date=" + date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
         // Change this value according to the final deployment URL
-        // var imgUrlReplacePrefix = "file://";
-        var imgUrlReplacePrefix = "https://karlitos.github.io";
+        var imgUrlReplacePrefix = "file://";
+        // var imgUrlReplacePrefix = "https://karlitos.github.io";
 
         // Create the basic page-structure
         var listContainer = document.createElement("div");
@@ -166,6 +166,8 @@
         function goBackBtnClick() {
             listContainer.style.display = "block ";
             articleContainer.style.display = "none ";
+            // scroll the view ll way up
+            window.scrollTo(0, 0);
             // Clear the article container content
             while (articleContainer.firstChild) {
                 articleContainer.removeChild(articleContainer.firstChild);
@@ -222,6 +224,8 @@
                     listContainer.style.display = "none ";
                     articleContainer.style.display = "block ";
                     loadingOverlay.style.display = "none ";
+                    // scroll the view ll way up
+                    window.scrollTo(0, 0);
                 }
             };
 
@@ -288,12 +292,14 @@
                             // Add onclick/ontouch handler with current url as argument
                             var url = heading.querySelector("a").href.replace(imgUrlReplacePrefix,"https://m.novinky.cz");
 
-                            listElement.onclick = function () {
+                            listElement.onmouseup = function () {
                                 onListItemClick(url)
                             };
+                            /*
                             listElement.ontouchstart = function () {
                                 onListItemClick(url)
                             };
+                            */
                             // ###
                             // img = articles[ii].querySelector("a > img");
                             img = articles[ii].querySelector("img");
