@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 	<title>Karel Mácha</title>
-	<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
 	<style>
 		/* Utils */
 /*----- Colors -----*/
@@ -64,7 +64,7 @@
 body {
     font-family: "Lato", Helvetica, Arial, sans-serif;
     font-weight: 400;
-    background: #393e46;
+    background: #2c2929;
     /* background: #f8f8f8; */
     /* margin: 50px 0 100px; */
     margin: 0;
@@ -128,13 +128,15 @@ a {
     text-decoration: inherit;
 }
 
-a:hover {
+a:hover, a:hover > i.fa-external-link, .info-tag-container a:hover .fa.fa-external-link {
     color: #2895F1;
 }
 
 a .fa-external-link {
-    font-size: 10px;
+    font-size: 8px;
+    margin-left: 2px;
     vertical-align: text-top;
+    color: #999;
 }
 
 p, li {
@@ -199,7 +201,7 @@ ul.two-column li {
     width: 45px;
     /* margin: 8px 0 10px; */
     margin: 4px 0 10px;
-    border-top: 1px solid #FF5701;
+    border-top: 1px solid #E16428;
 }
 
 .pull-left {
@@ -247,9 +249,9 @@ ul.two-column li {
     width: 120px;
     border-radius: 10%;
     padding: 2px;
-    border: 2px solid #FF5701;
+    border: 2px solid #E16428;
     object-fit: scale-down;
-    background: white;
+    background: #FFFFFF;
     float: right;
 }
 
@@ -258,13 +260,13 @@ ul.two-column li {
 
 /* Layouts */
 .page {
-    background: #222831;
+    background: #363333;
     color: #eeeeee;
     /* width: 612px; */
     min-height: 792px;
     display: block;
     margin: 0 auto;
-    border-top: 10px solid #FF5701;
+    border-top: 10px solid #E16428;
     /* padding: 36px 22px 30px 34px; */
     padding: 50px; /* 50px calc(50px + 10%);*/
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
@@ -297,7 +299,7 @@ ul.two-column li {
     /* margin-bottom: 15px; */
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #393e46;
+    border-top: 1px solid #2c2929;
 }
 
 .item:first-child, .title + .item {
@@ -307,14 +309,14 @@ ul.two-column li {
 }
 
 .title {
-    background-color: #393e46;
+    background-color: #2c2929;
 }
 
 .title > i {
     float: left;
     padding-top: 4px;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .right-column > .container > .title {
@@ -322,7 +324,7 @@ ul.two-column li {
 }
 
 .gpa {
-    border: 1px solid white;
+    border: 1px solid #FFFFFF;
     border-radius: 35%;
     padding: 2px;
     margin-left: 5px;
@@ -378,17 +380,17 @@ ul.two-column li {
 @media print {
     body {
         margin: 0;
-        background: white;
+        background: #FFFFFF;
         color: #000;
     }
 
     main {
-        background: white !important;
+        background: #FFFFFF !important;
         color: black !important;
     }
 
     @page {
-        border-top: 2px solid white;
+        border-top: 2px solid #FFFFFF;
     }
 
     .page {
@@ -401,15 +403,16 @@ ul.two-column li {
     }
 
     .title {
-        background-color: #393e46;
-        color: white
+        background-color: #2c2929;
+        color: #FFFFFF;
+        page-break-inside: avoid;
     }
 
     .keyline {
         width: 45px;
         /* margin: 8px 0 10px; */
         margin: 4px 0 10px;
-        border-top: 2px solid #FF5701;
+        border-top: 2px solid #E16428;
     }
 
     .page .resume-header,
@@ -435,7 +438,7 @@ ul.two-column li {
     }
 
     .gpa {
-        border: 1px solid #393e46;
+        border: 1px solid #2c2929;
         margin-left: 10px;
     }
 }
@@ -456,20 +459,27 @@ ul.two-column li {
 .info-tag-container .fa.fa-map-marker {
     font-size: 16px;
 }
+
 .info-tag-container .fa.fa-mobile {
     font-size: 18px;
 }
+
 .info-tag-container .fa.fa-envelope-o {
     font-size: 12px;
 }
+
 .info-tag-container .fa.fa-desktop {
     font-size: 11px;
 }
+
 .info-tag-container .fa.fa-external-link {
     width: auto;
-    font-size: inherit;
+    font-size: 8px;
+    margin-left: 2px;
     vertical-align: text-top;
+    color: #999;
 }
+
 .info-tag-container .info-text {
     font-size: 11px;
     display: inline-block;
@@ -539,6 +549,15 @@ ul.two-column li {
 					                                     </a>
 					                                 </h6>
 					                         </div>
+					                         <div class="info-tag-container">
+					                                     <i class="fa fa-stack-overflow"></i>
+					                         
+					                                 <h6 class="info-text">
+					                                     <a href="https://stackoverflow.com/users/1991697/karlitos" target="_blank">
+					                                         karlitos <i class="fa fa-external-link" aria-hidden="true"></i>
+					                                     </a>
+					                                 </h6>
+					                         </div>
 					</div>
 					    <div class="skills-container">
 					            <section class="container">
@@ -601,8 +620,8 @@ ul.two-column li {
 					                            <li><h6>Sinon</h6></li>
 					                            <li><h6>JUnit</h6></li>
 					                            <li><h6>Maven</h6></li>
-					                            <li><h6>Gulp</h6></li>
 					                            <li><h6>Webpack</h6></li>
+					                            <li><h6>Gulp</h6></li>
 					                            <li><h6>Jenkins</h6></li>
 					                            <li><h6>Bamboo</h6></li>
 					                            <li><h6>Ansible</h6></li>
@@ -647,18 +666,22 @@ ul.two-column li {
 					                    </ul>
 					            </section>
 					            <section class="item">
-					                    <h4 class="bold">Skating &amp; Scooting</h4>
+					                    <h4 class="bold">Sport in general</h4>
 					                    <ul class="minimal">
-					                            <li>Skating</li>
-					                            <li>Scooting</li>
-					                            <li>Alternative urban transportation</li>
+					                            <li>Working out</li>
+					                            <li>FitX</li>
+					                            <li>Jogging</li>
+					                            <li>Swimming</li>
+					                            <li>Volleyball</li>
+					                            <li>Skating &amp; Scooting</li>
 					                    </ul>
 					            </section>
 					            <section class="item">
-					                    <h4 class="bold">Travelling &amp; Outdoor</h4>
+					                    <h4 class="bold">Traveling &amp; Outdoor</h4>
 					                    <ul class="minimal">
 					                            <li>Camino de Santiago</li>
-					                            <li>FitX</li>
+					                            <li>On the way in the city or nature with my TrailSkates TM and foldable electric kick-scooter.</li>
+					                            <li>Alternative urban transportation</li>
 					                    </ul>
 					            </section>
 					    </div>
@@ -666,17 +689,19 @@ ul.two-column li {
 				<div class="right-column">
 					        <div class="container summary-container">
 					            <div class="title">
+					                    <i class="fa fas fa-file-alt"></i>
 					                <h3>Summary</h3>
 					                <div class="keyline"></div>
 					            </div>
 					            <p class="summary">
-					                <p>German comming originally from Czech Republic. Professional Web Developper. Open-Source supporter and occasional contributor.<br>  &quot;Happy are those who dream dreams and are ready to pay the price to make them come true.&quot;  <em>Leon J. Suenes</em></p>
+					                <p>German coming originally from Czech Republic. Professional Web Developer. Open-Source supporter and occasional contributor. Software architecture and DevOps enthusiast with a one good eye for pixel-perfect design.</p>
+					<p>  &quot;Happy are those who dream dreams and are ready to pay the price to make them come true.&quot;  <em>Leon J. Suenes</em></p>
 					
 					            </p>
 					        </div>
 					<div class="container work-container">
 					    <div class="title">
-					            <i class="fa fa-code"></i>
+					            <i class="fa fas fa-user-tie"></i>
 					        <h3>Experience</h3>
 					        <div class="keyline"></div>
 					    </div>
@@ -689,18 +714,19 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">05/2018</span>
-					                        <span class="endDate"> - Present</span>
+					                            <span class="startDate">05/2018</span>
+					                            <span class="endDate"> - Present</span>
 					                </h5>
 					            </div>
-					            <h4>Senior Solutions Engineer FullStack (Java/JavaScript)</h4>
 					
-					            <p class="summary"><p>Development of special commmunication plattform (<em>besondere elektronische Notarpostfach</em>) for notary offices in Germany</p>
+					            <h4>Senior Solutions Engineer Full-Stack (Java/JavaScript/Angular.js/Node.js)</h4>
+					
+					            <p class="summary"><p>Development of special communication platform (<em>besondere elektronische Notarpostfach</em>) for notary offices in Germany</p>
 					</p>
 					
 					            <ul>
-					                <li>Implementation of new featuers according to the customer specification.</li>
-					                <li>Improvement and enhancement of the develoment and CI processes.</li>
+					                <li>Implementation of new features according to the customer specification.</li>
+					                <li>Improvement and enhancement of the development and CI processes.</li>
 					                <li>Bug fixes and optimization of the consisting code base in Front-End and Back-End.</li>
 					            </ul>
 					        </section>
@@ -712,11 +738,12 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">05/2017</span>
-					                        <span class="endDate"> - 05/2018</span>
+					                            <span class="startDate">05/2017</span>
+					                            <span class="endDate"> - 05/2018</span>
 					                </h5>
 					            </div>
-					            <h4>Full-Stack Web Developer (JAVA/JavaScript)</h4>
+					
+					            <h4>Full-Stack Web Developer (JAVA/JavaScript/Vue.js/Leaflet/React)</h4>
 					
 					            <p class="summary"><p>Development of REST-APIs and internal web applications</p>
 					</p>
@@ -735,40 +762,41 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">09/2016</span>
-					                        <span class="endDate"> - 03/2017</span>
+					                            <span class="startDate">09/2016</span>
+					                            <span class="endDate"> - 03/2017</span>
 					                </h5>
 					            </div>
-					            <h4>Front-End Developer (JavaScript/AngularJS)</h4>
 					
-					            <p class="summary"><p>Development of HERE WeGo web application</p>
+					            <h4>Front-End Developer (JavaScript/AngularJS/Node.js)</h4>
+					
+					            <p class="summary"><p>Maintenance and enhancement of HERE WeGo web application</p>
 					</p>
 					
 					            <ul>
-					                <li>Concept and development of interactive editor and configuration-server for administration of operating areas.</li>
-					                <li>Concept and development of driver-administration web application.</li>
-					                <li>Concept and development of service-monitoring display.</li>
+					                <li>Application maintenance, trouble shooting and issue resolution.</li>
+					                <li>Improving monetization performance, SEO, user-base enhancement</li>
 					            </ul>
 					        </section>
 					        <section class="item">
 					            <div class="section-header clearfix">
 					                <h3 class="bold pull-left">
-					                        Betinganalytics
+					                        Bettinganalytics
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">06/2016</span>
-					                        <span class="endDate"> - 09/2016</span>
+					                            <span class="startDate">06/2016</span>
+					                            <span class="endDate"> - 09/2016</span>
 					                </h5>
 					            </div>
-					            <h4>Co-founder &amp; Full-Stack Developer</h4>
+					
+					            <h4>Co-founder &amp; Full-Stack Developer (Meteor/React/MongoDB)</h4>
 					
 					            <p class="summary"><p>Co-founder, Web application development.</p>
 					</p>
 					
 					            <ul>
 					                <li>Concept, design and development of the Front-End UI</li>
-					                <li>Concept, and development of Back-End services and user-managment</li>
-					                <li>Concept and development of APIs for services computing betting predicitons.</li>
+					                <li>Concept, and development of Back-End services and user-management</li>
+					                <li>Concept and development of APIs for services computing betting predictions.</li>
 					            </ul>
 					        </section>
 					        <section class="item">
@@ -779,13 +807,14 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">07/2015</span>
-					                        <span class="endDate"> - 07/2016</span>
+					                            <span class="startDate">07/2015</span>
+					                            <span class="endDate"> - 07/2016</span>
 					                </h5>
 					            </div>
-					            <h4>Software Developer</h4>
 					
-					            <p class="summary"><p>Developement of an nation-wide archival system for archeology and anicent studies.</p>
+					            <h4>Software Developer (Java/Python/Java)</h4>
+					
+					            <p class="summary"><p>Development of an nation-wide archival system for archeology and ancient studies.</p>
 					</p>
 					
 					            <ul>
@@ -801,17 +830,18 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">01/2015</span>
-					                        <span class="endDate"> - 03/2015</span>
+					                            <span class="startDate">01/2015</span>
+					                            <span class="endDate"> - 03/2015</span>
 					                </h5>
 					            </div>
+					
 					            <h4>Product and software development manager</h4>
 					
 					            <p class="summary"><p>Enhancement of the health- network platform.</p>
 					</p>
 					
 					            <ul>
-					                <li>Support-managamnet and maintananc of the health-network services.</li>
+					                <li>Support-management and maintenance of the health-network services.</li>
 					                <li>On-site customer support.</li>
 					            </ul>
 					        </section>
@@ -823,10 +853,11 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">08/2014</span>
-					                        <span class="endDate"> - 12/2014</span>
+					                            <span class="startDate">08/2014</span>
+					                            <span class="endDate"> - 12/2014</span>
 					                </h5>
 					            </div>
+					
 					            <h4>Technician/Software Developer (C/C++/Python)</h4>
 					
 					            <p class="summary"><p>Development of a Linux- based, network-capable multi-camera-system.</p>
@@ -834,7 +865,7 @@ ul.two-column li {
 					
 					            <ul>
 					                <li>Finalizing and optimization of multi-camera-system using unbuffered cameras.</li>
-					                <li>Development of control software for remote controlling and managment.</li>
+					                <li>Development of control software for remote controlling and management.</li>
 					            </ul>
 					        </section>
 					        <section class="item">
@@ -845,17 +876,18 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">06/2012</span>
-					                        <span class="endDate"> - 03/2014</span>
+					                            <span class="startDate">06/2012</span>
+					                            <span class="endDate"> - 03/2014</span>
 					                </h5>
 					            </div>
-					            <h4>Software Developer (JAVA/JavaScript)</h4>
+					
+					            <h4>Software Developer (JAVA/JavaScript/D3.js)</h4>
 					
 					            <p class="summary"><p>Analysis and visualization of medical data.</p>
 					</p>
 					
 					            <ul>
-					                <li>Concept and development of intearctive, web-based visualization for connected medical data</li>
+					                <li>Concept and development of interactive, web-based visualization for connected medical data</li>
 					                <li>Development of XML data parser for analysis of medical thesaurus.</li>
 					            </ul>
 					        </section>
@@ -867,18 +899,19 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">08/2011</span>
-					                        <span class="endDate"> - 03/2012</span>
+					                            <span class="startDate">08/2011</span>
+					                            <span class="endDate"> - 03/2012</span>
 					                </h5>
 					            </div>
+					
 					            <h4>Research Assistant (doctoral student)</h4>
 					
-					            <p class="summary"><p>Development and enhacment of web-based databases for structural </p>
+					            <p class="summary"><p>Development and enhancement of web-based databases for structural </p>
 					</p>
 					
 					            <ul>
-					                <li>Enhancment and development of the database front-end.</li>
-					                <li>Optimization and enhancment of underlying data sources.</li>
+					                <li>Enhancement and development of the database front-end.</li>
+					                <li>Optimization and enhancement of underlying data sources.</li>
 					            </ul>
 					        </section>
 					        <section class="item">
@@ -889,10 +922,11 @@ ul.two-column li {
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">01/2006</span>
-					                        <span class="endDate"> - 01/2009</span>
+					                            <span class="startDate">01/2006</span>
+					                            <span class="endDate"> - 01/2009</span>
 					                </h5>
 					            </div>
+					
 					            <h4>Research Assistant (student assistant)</h4>
 					
 					            <p class="summary"><p>Development of software for image processing and digitization of book inventories.</p>
@@ -902,6 +936,7 @@ ul.two-column li {
 					</div>
 					<div class="container education-container">
 					    <div class="title">
+					            <i class="fa fas fa-user-graduate"></i>
 					        <h3>Education</h3>
 					        <div class="keyline"></div>
 					    </div>
@@ -909,26 +944,20 @@ ul.two-column li {
 					        <section class="item">
 					            <div class="section-header clearfix">
 					                <h3 class="bold pull-left">
-					                        Tüv
+					                        TÜV SÜD Akademie
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">01/2018</span>
-					                        <span class="endDate"> - 01/2018</span>
+					                            01/2018
 					                </h5>
 					            </div>
-					            <h4 class="display-inline">Certification Agile project management</h4>
+					
+					            <h4 class="display-inline">Certification - Agile project management</h4>
 					
 					
 					            <ul class="two-column">
-					                <li><p><strong>Bioinformatics</strong> - Algorithmic phylogenetics, Bioinformatic methods in genomics, Biosystemanalysis, Database systems, Molecural computing,  Evolutionary principles</p>
+					                <li><p>ITEMO Professional SCRUM Master</p>
 					</li>
-					                <li><p><strong>Biology</strong> - Biomarker, Structural biology, Medical ethics</p>
-					</li>
-					                <li><p><strong>Biochemistry and Mocelular Biology</strong> - Biological rhythms and molecural clocks, Photobiology, Modeling metabolic systems</p>
-					</li>
-					                <li><p><strong>Informatics</strong> - Parallel algorithms, Digital electronics / Digital circuits</p>
-					</li>
-					                <li><p><strong>Informatics and Mathematics</strong> - Image Processing / Computer Vision</p>
+					                <li><p>Agile project management according to SCRUM</p>
 					</li>
 					            </ul>
 					        </section>
@@ -938,18 +967,20 @@ ul.two-column li {
 					                        Friedrich-Schiller-University
 					                </h3>
 					                <h5 class="italic pull-right">
+					                        <span class="endDate">completed 01/2011</span>
 					                </h5>
 					            </div>
-					            <h4 class="display-inline">Diploma (ISCED 5A) Bioinformatics</h4>
+					
+					            <h4 class="display-inline">Diploma (ISCED 5A) - Bioinformatics</h4>
 					
 					            <h5 class="display-inline gpa">GPA 1.3</h5>
 					
 					            <ul class="two-column">
-					                <li><p><strong>Bioinformatics</strong> - Algorithmic phylogenetics, Bioinformatic methods in genomics, Biosystemanalysis, Database systems, Molecural computing,  Evolutionary principles</p>
+					                <li><p><strong>Bioinformatics</strong> - Algorithmic phylogenetics, Bioinformatic methods in genomics, Biosystemanalysis, Database systems, Molecular computing,  Evolutionary principles</p>
 					</li>
 					                <li><p><strong>Biology</strong> - Biomarker, Structural biology, Medical ethics</p>
 					</li>
-					                <li><p><strong>Biochemistry and Mocelular Biology</strong> - Biological rhythms and molecural clocks, Photobiology, Modeling metabolic systems</p>
+					                <li><p><strong>Biochemistry and Molecular Biology</strong> - Biological rhythms and molecular clocks, Photobiology, Modeling metabolic systems</p>
 					</li>
 					                <li><p><strong>Informatics</strong> - Parallel algorithms, Digital electronics / Digital circuits</p>
 					</li>
@@ -963,9 +994,11 @@ ul.two-column li {
 					                        Gymnázium Na Pražačce (German and Czech high-school Prague)
 					                </h3>
 					                <h5 class="italic pull-right">
+					                        <span class="endDate">completed 01/2003</span>
 					                </h5>
 					            </div>
-					            <h4 class="display-inline">High-school with government licensing examination in German language (C1) Secondary education</h4>
+					
+					            <h4 class="display-inline">High-school with government licensing examination in German language (C1) - Secondary education</h4>
 					
 					
 					        </section>
@@ -975,17 +1008,19 @@ ul.two-column li {
 					                        Von Saldern-Gymnasium (Brandenburg)
 					                </h3>
 					                <h5 class="italic pull-right">
-					                        <span class="startDate">01/2000</span>
-					                        <span class="endDate"> - 01/2001</span>
+					                            <span class="startDate">01/2000</span>
+					                            <span class="endDate"> - 01/2001</span>
 					                </h5>
 					            </div>
-					            <h4 class="display-inline">Student exchange-program Secondary education</h4>
+					
+					            <h4 class="display-inline">Student exchange-program - Secondary education</h4>
 					
 					
 					        </section>
 					</div>
 					<div class="container publications-container">
 					    <div class="title">
+					            <i class="fa fas fa-book-open"></i>
 					        <h3>Publications</h3>
 					        <div class="keyline"></div>
 					    </div>
@@ -1001,6 +1036,7 @@ ul.two-column li {
 					                    01/2011
 					                    </h5>
 					        </div>
+					
 					        <h5 class="awarder">Nucleic Acids Research</h5>
 					
 					        <p class="summary"><p>Participation in a scientific publication.</p>
